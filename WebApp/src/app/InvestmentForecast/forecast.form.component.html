@@ -1,0 +1,103 @@
+<h2>Investment Forecast</h2>
+<p>Please fill in the following form to model your annual growth (calculated monthly).</p>
+<form action="#">
+  <div *ngIf="hasError" class="alert alert-danger">
+    <strong>We're Sorry!</strong><br /><span>An error occurred whilst creating your graph. We are aware and are working on it and expect a fix ASAP.</span>
+  </div>
+
+  <div *ngIf="hasServerValidationMessages" class="alert alert-warning">
+    <strong>The following errors have occurred:</strong><br />
+    <ul>
+      <li *ngFor="let message of validationMessages">{{message}}</li>
+    </ul>
+  </div>
+
+  <div class="form-group">
+    <label for="lumpSum">Lump Sum (£):</label>
+    <input type="number" [(ngModel)]="_model.LumpSumInvestment" class="form-control" id="lumpSum" name="lumpsum" (keyup)="onKey($event)"
+           [ngClass]="{
+           'is-valid' : !_model.LumpSumInvestmentError || _model.LumpSumInvestmentError.length == 0,
+           'is-invalid' : _model.LumpSumInvestmentError && _model.LumpSumInvestmentError.length > 0
+    }"
+    >
+    <div class="invalid-feedback">{{_model.LumpSumInvestmentError}}</div>
+  </div>
+
+  <div class="form-group">
+    <label for="monthlyInvestment">Monthly investment (£):</label>
+    <input type="number" [(ngModel)]="_model.MonthlyInvestment" class="form-control" id="monthlyInvestment" name="monthlyInvestment" (keyup)="onKey($event)"
+           [ngClass]="{
+           'is-valid' : !_model.MonthlyInvestmentError || _model.MonthlyInvestmentError.length == 0,
+           'is-invalid' : _model.MonthlyInvestmentError && _model.MonthlyInvestmentError.length > 0
+    }"
+    >
+    <div class="invalid-feedback">{{_model.MonthlyInvestmentError}}</div>
+  </div>
+
+  <div class="form-group">
+    <label for="targetValue">Target value (£):</label>
+    <input type="number" [(ngModel)]="_model.TargetValue" class="form-control" id="targetValue" name="targetValue" (keyup)="onKey($event)"
+           [ngClass]="{
+           'is-valid' : !_model.TargetValueError || _model.TargetValueError.length == 0,
+           'is-invalid' : _model.TargetValueError && _model.TargetValueError.length > 0
+    }"
+    >
+    <div class="invalid-feedback">{{_model.TargetValueError}}</div>
+  </div>
+
+  <div class="form-group">
+    <label for="investmentTerm">Investment Term (years):</label>
+    <input type="number" [(ngModel)]="_model.InvestmentTermInYears" class="form-control is-valid"
+           id="investmentTerm" name="investmentTerm" (keyup)="onKey($event)"
+           [ngClass]="{
+           'is-valid' : !_model.InvestmentTermInYearsError || _model.InvestmentTermInYearsError.length == 0,
+           'is-invalid' : _model.InvestmentTermInYearsError && _model.InvestmentTermInYearsError.length > 0
+    }"
+    >
+    <div class="invalid-feedback">{{_model.InvestmentTermInYearsError}}</div>
+  </div>
+
+  <label class="inlineRadioButtonHeader">Risk Level:</label>
+
+  <div class="form-check-inline">
+    <label class="form-check-label">
+      <input type="radio" [(ngModel)]="_model.RiskLevel" class="form-check-input" name="optradio" value="low" checked=""><span>Low</span>
+    </label>
+  </div>
+
+  <div class="form-check-inline">
+    <label class="form-check-label">
+      <input type="radio" [(ngModel)]="_model.RiskLevel" class="form-check-input" name="optradio" value="medium"><span>Medium</span>
+    </label>
+  </div>
+
+  <div class="form-check-inline">
+    <label class="form-check-label">
+      <input type="radio" [(ngModel)]="_model.RiskLevel" class="form-check-input" name="optradio" value="high"><span>High</span>
+    </label>
+  </div>
+
+  <div *ngIf="_model.RiskLevel == 'low'">
+    <pre>Wide Bounds: 1 - 3% (annual growth rate)</pre>
+    <pre>Narrow Bounds: 1 - 3% (annual growth rate)</pre>
+  </div>
+
+  <div *ngIf="_model.RiskLevel == 'medium'">
+    <pre>Wide Bounds: 0 - 5% (anannual growth rate)</pre>
+    <pre>Narrow Bounds: 1.5 - 3.5% (annual growth rate)</pre>
+  </div>
+
+  <div>
+    <div *ngIf="_model.RiskLevel == 'high'">
+      <pre>Wide Bounds: 1 - 7% (annual growth rate)</pre>
+      <pre>Narrow Bounds: 2 - 4% (annual growth rate)</pre>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" id="calculateForecast" (click)="onSubmit()"
+          [disabled]="_model.isValid == false">
+    Submit
+  </button>
+</form>
+
+<line-chart [chartProperties]="chartRequest"></line-chart>
