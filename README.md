@@ -56,7 +56,7 @@ I enjoyed writing the angular 6 app as I have limited experience in it. I though
 I wrote some jasmine tests that execute with karma (cross browser testing) and to get them to work I needed to add a component declaration on a model. However that causes an issue with the command ng build -aot which runs the web app. So I will figure out a workaround at a future time. 
 
 ### What would you do to improve it / continue development?
-I developed it on an Azure VM and I tested it on another vm which highlighted a couple of issues that I fixed. Ideally with more time I would have put it in a docker container so that I can guarantee it will work on most machines and perhaps deployed it to AWS or Azure.
+I developed it on an Azure vm and I tested it on another vm which highlighted a couple of issues that I fixed. Ideally with more time I would have put it in a docker container so that I can guarantee it will work on most machines and perhaps deployed it to AWS or Azure.
 
 Also towards the end I found out about Protractor.js which runs end 2 end tests using the browser, with more time I would get a few tests in here. Additionally although I have added validation and error messages in future development I would improve the messages. A logging component would have also been good in the places where I have commented about logging. I've left the business validation blank but present so that upon learning business rules I could implement them e.g. monthly must be less than lump sum etc.
 
