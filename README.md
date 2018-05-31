@@ -46,7 +46,7 @@ If you have any problems with the web app not spinning up, close visual studio, 
 
 ## Questions
 
-## How long did you spend on the code test?
+### How long did you spend on the code test?
 15-20 hours
 
 ### What went well?
