@@ -58,8 +58,8 @@ I wrote some jasmine tests that execute with karma (cross browser testing) and t
 ### What would you do to improve it / continue development?
 I developed it on an Azure vm and I tested it on another vm which highlighted a couple of issues that I fixed. Ideally with more time I would have put it in a docker container so that I can guarantee it will work on most machines and perhaps deployed it to AWS or Azure.
 
-Also towards the end I found out about Protractor.js which runs end 2 end tests using the browser, with more time I would get a few tests in here. Additionally although I have added validation and error messages in future development I would improve the messages. A logging component would have also been good in the places where I have commented about logging. I've left the business validation blank but present so that upon learning business rules I could implement them e.g. monthly must be less than lump sum etc.
+Also towards the end I found out about Protractor.js which runs end 2 end tests using the browser, with more time I would have written a few tests for it. Additionally although I have added validation and error messages, I would improve the content of the  messages. A logging component would have also been good in the places where I have commented about logging such as in the catch blocks. I've left the business validation blank but present so that upon learning business rules I could implement them e.g. monthly must be less than lump sum etc.
 
 Ideally I would have preferred the web application would be pure angular 6 without the dot net core integration as it adds unnecessary bloating but I made the decision to integrate it to fit the requirement 'visual studio solution'.
 
-Also I would look to make it possible to get the bound rates from I/O such as a database or from user input.
+Also I would look to make it possible to get the bound rates from external input as a database or from user input.
