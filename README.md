@@ -36,14 +36,15 @@ NodeJs and Npm - https://nodejs.org/en/ (make sure you restart after install)
 
 ## Features
 
-Angular 6 + jasmine tests
-.Net Core 2.0 
-Dependency injection
-Client side restricted user entry
-Chart JS
-Model binding and validation
-Integration and unit tests
-Test builder and factory pattern
+- Angular 6 + jasmine tests
+- .Net Core 2.0 
+- Dependency injection
+- Client side restricted user entry
+- Chart JS
+- Model binding and validation
+- Integration and unit tests
+- Test builder and factory pattern
+- Bootstrap
 
 ## Questions
 
@@ -63,4 +64,4 @@ Also towards the end I found out about Protractor.js which runs end 2 end tests 
 
 Ideally I would have preferred the web application would be pure angular 6 without the dot net core integration as it adds unnecessary bloating but I made the decision to integrate it to fit the requirement 'visual studio solution'.
 
-Also I would look to make it possible to get the bound rates from I/O e.g. database or from user input.
+Also I would look to make it possible to get the bound rates from I/O such as a database or from user input.
