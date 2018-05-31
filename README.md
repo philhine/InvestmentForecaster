@@ -53,7 +53,7 @@ If you have any problems with the web app not spinning up, close visual studio, 
 I enjoyed writing the angular 6 app as I have limited experience in it. I thought the integration tests and unit tests helped give me confidence in the results and helped me with several refactors. 
 
 ### Was there anything that was attempted but was not possible to get working in the time so is not visible in the code?
-I wrote some jasmine tests that execute with karma (cross browser testing) and to get them to work I needed to add a component declaration on a model. However that causes an issue with the command ng build -aot which runs the web app. So I will figure out a workaround a future time. 
+I wrote some jasmine tests that execute with karma (cross browser testing) and to get them to work I needed to add a component declaration on a model. However that causes an issue with the command ng build -aot which runs the web app. So I will figure out a workaround at a future time. 
 
 ### What would you do to improve it / continue development?
 I developed it on an Azure VM and I tested it on another vm which highlighted a couple of issues that I fixed. Ideally with more time I would have put it in a docker container so that I can guarantee it will work on most machines and perhaps deployed it to AWS or Azure.
