@@ -28,9 +28,9 @@ NodeJs and Npm - https://nodejs.org/en/ (make sure you restart after install)
 
 8) Right click on the solution in solution explorer and select properties and on the startup section set multiple start up projects to 'InvestmentForecast.api' and 'WebApp' and press play to run. If you are running this for the first time it is possible it might take a while to load.
 
-10) You will get a pop up asking you about IIS Express SSL Certificate - select yes. This will shortly be followed by a security warning asking you if you want to install the certificate - select yes.
+9) You will get a pop up asking you about IIS Express SSL Certificate - select yes. This will shortly be followed by a security warning asking you if you want to install the certificate - select yes.
 
-* If you have any problems with the web app not spinning up, close visual studio, delete the .vs hidden folder in the root directory of the project and try again. 
+If you have any problems with the web app not spinning up, close visual studio, delete the .vs hidden folder in the root directory of the project and try again. 
 
 ## Features
 
