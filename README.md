@@ -34,5 +34,33 @@ NodeJs and Npm - https://nodejs.org/en/ (make sure you restart after install)
 
 * If you have any problems with the web app not spinning up, close visual studio, delete the .vs hidden folder in the root directory of the project and try again. 
 
+## Features
 
+Angular 6 + jasmine tests
+.Net Core 2.0 
+Dependency injection
+Client side restricted user entry
+Chart JS
+Model binding and validation
+Integration and unit tests
+Test builder and factory pattern
 
+## Questions
+
+## How long did you spend on the code test?
+15-20 hours
+
+### What went well?
+I enjoyed writing the angular 6 app as I have limited experience in it. I thought the integration tests and unit tests helped give me confidence in the results and helped me with several refactors. 
+
+### Was there anything that was attempted but was not possible to get working in the time so is not visible in the code?
+I wrote some jasmine tests that execute with karma (cross browser testing) and to get them to work I needed to add a component declaration on a model. However that causes an issue with the command ng build -aot which runs the web app. So I will figure out a workaround a future time. 
+
+### What would you do to improve it / continue development?
+I developed it on an Azure VM and I tested it on another vm which highlighted a couple of issues that I fixed. Ideally with more time I would have put it in a docker container so that I can guarantee it will work on most machines and perhaps deployed it to AWS or Azure.
+
+Also towards the end I found out about Protractor.js which runs end 2 end tests using the browser, with more time I would get a few tests in here. Additionally although I have added validation and error messages in future development I would improve the messages. A logging component would have also been good in the places where I have commented about logging. I've left the business validation blank but present so that upon learning business rules I could implement them e.g. monthly must be less than lump sum etc.
+
+Ideally I would have preferred the web application would be pure angular 6 without the dot net core integration as it adds unnecessary bloating but I made the decision to integrate it to fit the requirement 'visual studio solution'.
+
+Also I would look to make it possible to get the bound rates from I/O e.g. database or from user input.
